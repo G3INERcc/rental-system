@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #334155;
+    line-height: 1.6;
+}
+
+header {
+     background:
+        linear-gradient(
+            120deg,
+            rgba(91, 33, 182, .90),
+            rgba(168, 85, 247, .65),
+            rgba(244, 114, 182, .35)
+        );
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow:0 2px 12px rgba(0, 0, 0, 0.2);
+    
+}
+
+/*
+
+-------------Menu bar----------
+
+*/
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+.menu-links{
+    height: 100%;
+    transition: transform .5s;
+    display: flex;
+}
+.menu-link{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    height: 100%;
+}
+.menu-link:hover{
+    background-color: rgba(165, 24, 24, 0);
+}
+.menu-link--inside{
+    padding: 10px 30px 10px 10px;
+
+}
+.menu-link--inside:hover{
+         background-color:rgba(214, 25, 164, 0.208);
+    color: black;
+    border-color: #000000;
+}
+
+.menu-item{
+    list-style: none;
+    position: relative;
+    height: 100%;
+    --clip: polygon(0 0,100% 0,100% 0,0 0);
+}
+.menu-item:hover{
+    --clip: polygon(0 0,100% 0,100% 100%,0 100%);
+
+}
+
+.menu-nesting{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    width: 100%;
+    list-style: none;
+    background: #fafcfc;
+    clip-path: var(--clip);
+    transition: .3s;
+    z-index: 200;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,.15);
+}
