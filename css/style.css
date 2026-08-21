@@ -35,12 +35,12 @@ header {
 -------------Menu bar----------
 
 */
-.menu{
+.menu {
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: space-between;
+    width: 100%;
 }
-
 .menu-container{
     display: flex;
     justify-content: space-between;
@@ -219,4 +219,19 @@ SECTION PROJECTS
 .project p {
     color: #64748b;
     margin-bottom: 20px;
+}
+
+
+
+
+/*
+
+FOOTER
+
+*/
+footer {
+    color: #ffffff;
+    background-color: #020203;
+    padding: 20px 0;
+    text-align: center;
 }
