@@ -1,11 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Publicar vivienda</title>
+    <link rel="stylesheet" href="../css/rental-publisher.css">
 </head>
+
 <body>
-    
+
+    <header>
+        <section class="menu-container">
+            <nav class="menu">
+
+                <h1 class="logo">Galei</h1>
+
+                <ul class="menu-links">
+
+                    <li class="menu-item">
+                        <a href="../index.html" class="menu-link">Inicio</a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="about.html" class="menu-link">Sobre nosotros</a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">Servicios</a>
+
+                        <ul class="menu-nesting">
+                            <li class="menu-inside">
+                                <a href="rental-publisher.html" class="menu-link menu-link--inside">
+                                    Publicar vivienda
+                                </a>
+                            </li>
+
+                            <li class="menu-inside">
+                                <a href="rental-catalog.html" class="menu-link menu-link--inside">
+                                    Renta de residencias
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">Contáctenos</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+        </section>
+    </header>
+
+
+    <main>
+
+        <section class="form-section">
+
+            <div class="container">
+
+                <h1>Publicar una vivienda</h1>
+
+                <p>
+                    Complete el siguiente formulario para registrar una vivienda
+                    disponible para alquiler.
+                </p>
+
+
+                <form action="#" method="post">
+
+
+                    <!-- DATOS DEL VENDEDOR -->
+
+                    <fieldset>
+
+                        <legend>Datos del propietario</legend>
+
+                        <label for="nombre">Nombre:</label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre"
+                            required
+                        >
+
+                        <br><br>
+
+
+                        <label for="apellidos">Apellidos:</label>
+                        <input 
+                            type="text" 
+                            id="apellidos" 
+                            name="apellidos"
+                            required
+                        >
+
+                        <br><br>
+
+
+                        <label for="telefono">Número de teléfono:</label>
+                        <input 
+                            type="tel" 
+                            id="telefono" 
+                            name="telefono"
+                            required
+                        >
+
+                        <br><br>
+
+
+                        <label for="correo">Correo electrónico:</label>
+                        <input 
+                            type="email" 
+                            id="correo" 
+                            name="correo"
+                            required
+                        >
+
+                    </fieldset>
+
+
+                    <br>
+
+
+                    <!-- DATOS DE LA VIVIENDA -->
+
+                    <fieldset>
+
+                        <legend>Datos de la vivienda</legend>
+
+
+                        <label for="tipo-vivienda">
+                            Tipo de vivienda:
+                        </label>
+
+                        <select id="tipo-vivienda" name="tipo-vivienda" required>
+
+                            <option value="">
+                                Seleccione una opción
+                            </option>
+
+                            <option value="casa">
+                                Casa
+                            </option>
+
+                            <option value="apartamento">
+                                Apartamento
+                            </option>
+
+                        </select>
+
+                        <br><br>
+
+
+                        <label for="nombre-vivienda">
+                            Nombre de la vivienda:
+                        </label>
+
+                        <input 
+                            type="text" 
+                            id="nombre-vivienda" 
+                            name="nombre-vivienda"
+                            placeholder="Ej. Casa Los Ángeles"
+                            required
+                        >
+
+                        <br><br>
+
+
+                        <label for="descripcion">
+                            Descripción general:
+                        </label>
+
+                        <br>
+
+                        <textarea 
+                            id="descripcion" 
+                            name="descripcion"
+                            rows="5"
+                            placeholder="Describa brevemente la vivienda..."
+                            required
+                        ></textarea>
+
+                        <br><br>
+
+
+                        <label for="habitaciones">
+                            Cantidad de habitaciones:
+                        </label>
+
+                        <input 
+                            type="number" 
+                            id="habitaciones" 
+                            name="habitaciones"
+                            min="1"
+                            required
+                        >
+
+                        <br><br>
+
+
+                        <label for="banos">
+                            Cantidad de baños:
+                        </label>
+
+                        <input 
+                            type="number" 
+                            id="banos" 
+                            name="banos"
+                            min="1"
+                            required
+                        >
+
+                        <br><br>
+
+
+                        <label for="cochera">
+                            ¿Cuenta con cochera?
+                        </label>
+
+                        <select id="cochera" name="cochera" required>
+
+                            <option value="">
+                                Seleccione una opción
+                            </option>
+
+                            <option value="si">
+                                Sí
+                            </option>
+
+                            <option value="no">
+                                No
+                            </option>
+
+                        </select>
+
+                        <br><br>
+
+
+                        <label for="aire-acondicionado">
+                            ¿Cuenta con aire acondicionado?
+                        </label>
+
+                        <select id="aire-acondicionado" name="aire-acondicionado" required>
+
+                            <option value="">
+                                Seleccione una opción
+                            </option>
+
+                            <option value="si">
+                                Sí
+                            </option>
+
+                            <option value="no">
+                                No
+                            </option>
+
+                        </select>
+
+                        <br><br>
+
+
+                        <label for="precio">
+                            Precio mensual:
+                        </label>
+
+                        <input 
+                            type="number" 
+                            id="precio" 
+                            name="precio"
+                            min="0"
+                            placeholder="Ej. 250000"
+                            required
+                        >
+
+                        <br><br>
+
+
+                        <label for="fecha">
+                            Fecha de publicación:
+                        </label>
+
+                        <input 
+                            type="date" 
+                            id="fecha" 
+                            name="fecha"
+                            required
+                        >
+
+                    </fieldset>
+
+
+                    <br>
+
+
+                    <!-- BOTÓN -->
+
+                    <button type="submit">
+                        Registrar vivienda
+                    </button>
+
+                    <button type="reset">
+                        Limpiar formulario
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-container">
+
+            <p>
+                &copy; 2026 G3. Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
 </body>
+
 </html>

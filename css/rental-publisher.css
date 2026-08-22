@@ -1,0 +1,117 @@
+/* ---------- Estilo general ---------- */
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #F5E6D3; /* Beige suave */
+    color: #4B2E2E; /* Café profundo */
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- Encabezado y menú ---------- */
+header {
+    background: linear-gradient(90deg, #4B2E2E, #3A1F1F);
+    color: #F5E6D3;
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(75, 46, 46, 0.4);
+    border-bottom: 4px solid #FF7A00;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #FF7A00; /* Naranja vibrante */
+    margin-left: 20px;
+}
+
+.menu-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-link {
+    color: #F5E6D3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #06C167; /* Verde acento */
+}
+
+/* ---------- Sección principal ---------- */
+.form-section {
+    padding: 40px;
+    background-color: #F5E6D3;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(75, 46, 46, 0.2);
+    padding: 30px;
+}
+
+/* ---------- Formularios ---------- */
+fieldset {
+    border: 2px solid #A49E9E; /* Gris cálido */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    color: #4B2E2E;
+}
+
+label {
+    font-weight: 500;
+    color: #4B2E2E;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    border: 1px solid #A49E9E;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #FF7A00;
+    box-shadow: 0 0 5px rgba(255, 122, 0, 0.5);
+}
+
+/* ---------- Botones ---------- */
+button {
+    background-color: #FF7A00;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #06C167;
+}
+
+/* ---------- Pie de página ---------- */
+footer {
+    background-color: #4B2E2E;
+    color: #F5E6D3;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+}
