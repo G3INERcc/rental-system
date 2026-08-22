@@ -6,6 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publicar vivienda</title>
     <link rel="stylesheet" href="../css/rental-publisher.css">
+    
+    <!-- Carga del SDK de EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- Script de configuración e integración de EmailJS -->
+    <script type="text/javascript">
+        (function() {
+            // Inicialización con tu PUBLIC KEY
+            emailjs.init({
+                publicKey: "OXFQF2WFK0789kA-I",
+            });
+        })();
+
+        window.onload = function() {
+            const form = document.getElementById('form-vivienda');
+            
+            if (form) {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Evita la recarga de página
+
+                    // Cambio de texto del botón para feedback del usuario
+                    const submitBtn = document.getElementById('btn-submit');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Enviando...';
+                    submitBtn.disabled = true;
+
+                    // Envío mediante EmailJS usando tu SERVICE ID y TEMPLATE ID
+                    emailjs.sendForm('service_rkot84d', 'template_gqeki6p', this)
+                        .then(() => {
+                            alert('¡La vivienda se ha registrado y enviado correctamente por correo!');
+                            form.reset();
+                        })
+                        .catch((error) => {
+                            alert('Hubo un error al enviar el formulario. Inténtelo de nuevo.');
+                            console.error('FAILED...', error);
+                        })
+                        .finally(() => {
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                        });
+                });
+            }
+        };
+    </script>
 </head>
 
 <body>
@@ -70,10 +114,11 @@
                 </p>
 
 
-                <form action="#" method="post">
+                <!-- FORMULARIO VINCULADO A EMAILJS (id="form-vivienda") -->
+                <form id="form-vivienda">
 
 
-                    <!-- DATOS DEL VENDEDOR -->
+                    <!-- DATOS DEL PROPIETARIO -->
 
                     <fieldset>
 
@@ -137,17 +182,17 @@
                             Tipo de vivienda:
                         </label>
 
-                        <select id="tipo-vivienda" name="tipo-vivienda" required>
+                        <select id="tipo-vivienda" name="tipo_vivienda" required>
 
                             <option value="">
                                 Seleccione una opción
                             </option>
 
-                            <option value="casa">
+                            <option value="Casa">
                                 Casa
                             </option>
 
-                            <option value="apartamento">
+                            <option value="Apartamento">
                                 Apartamento
                             </option>
 
@@ -163,7 +208,7 @@
                         <input 
                             type="text" 
                             id="nombre-vivienda" 
-                            name="nombre-vivienda"
+                            name="nombre_vivienda"
                             placeholder="Ej. Casa Los Ángeles"
                             required
                         >
@@ -228,11 +273,11 @@
                                 Seleccione una opción
                             </option>
 
-                            <option value="si">
+                            <option value="Sí">
                                 Sí
                             </option>
 
-                            <option value="no">
+                            <option value="No">
                                 No
                             </option>
 
@@ -245,17 +290,17 @@
                             ¿Cuenta con aire acondicionado?
                         </label>
 
-                        <select id="aire-acondicionado" name="aire-acondicionado" required>
+                        <select id="aire-acondicionado" name="aire_acondicionado" required>
 
                             <option value="">
                                 Seleccione una opción
                             </option>
 
-                            <option value="si">
+                            <option value="Sí">
                                 Sí
                             </option>
 
-                            <option value="no">
+                            <option value="No">
                                 No
                             </option>
 
@@ -297,9 +342,9 @@
                     <br>
 
 
-                    <!-- BOTÓN -->
+                    <!-- BOTONES -->
 
-                    <button type="submit">
+                    <button type="submit" id="btn-submit">
                         Registrar vivienda
                     </button>
 
