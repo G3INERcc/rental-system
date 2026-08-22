@@ -1,105 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solicitud de alquiler</title>
-    <link rel="stylesheet" href="../css/rental-catalog.css">
-</head>
+    <link rel="stylesheet" href="../css/rental-catalog.css" />
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <h1>Solicitud de alquiler</h1>
-        <p>Complete el siguiente formulario para solicitar el alquiler de una propiedad.</p>
+      <h1>Solicitud de alquiler</h1>
+      <p>
+        Complete el siguiente formulario para solicitar el alquiler de una
+        propiedad.
+      </p>
     </header>
 
     <main>
+      <section class="section rental-section">
+        <div class="container">
+          <form id="form-vivienda">
+            <fieldset>
+              <legend>Datos del solicitante</legend>
 
-        <section class="section rental-section">
+              <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" />
+              </div>
 
-            <div class="container">
+              <div class="form-group">
+                <label for="cedula">Cédula</label>
+                <input type="text" id="cedula" name="cedula" />
+              </div>
 
-                <form id="form-vivienda">
+              <div class="form-group">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" />
+              </div>
 
-                    <fieldset>
+              <div class="form-group">
+                <label for="telefono">Número de teléfono</label>
+                <input type="tel" id="telefono" name="telefono" />
+              </div>
+            </fieldset>
 
-                        <legend>Datos del solicitante</legend>
+            <fieldset>
+              <legend>Información del alquiler</legend>
 
-                        <div class="form-group">
-                            <label for="nombre">Nombre completo</label>
-                            <input type="text" id="nombre" name="nombre">
-                        </div>
+              <div class="form-group">
+                <label for="propiedad">Propiedad</label>
+                <select id="propiedad" name="propiedad">
+                  <option value="Casa Familiar Los Almendros">
+                    Casa Familiar Los Almendros
+                  </option>
+                  <option value="Residencia Bella Vista">
+                    Residencia Bella Vista
+                  </option>
+                  <option value="Casa Centro Guápiles">
+                    Casa Centro Guápiles
+                  </option>
+                  <option value="Residencia La Colonia">
+                    Residencia La Colonia
+                  </option>
+                  <option value="Casa Jardines del Caribe">
+                    Casa Jardines del Caribe
+                  </option>
+                </select>
+              </div>
 
-                        <div class="form-group">
-                            <label for="cedula">Cédula</label>
-                            <input type="text" id="cedula" name="cedula" >
-                        </div>
+              <div class="form-group">
+                <label for="fechaInicio">Fecha de inicio del alquiler</label>
+                <input type="date" id="fechaInicio" name="fechaInicio" />
+              </div>
 
-                        <div class="form-group">
-                            <label for="correo">Correo electrónico</label>
-                            <input type="email" id="correo" name="correo" >
-                        </div>
+              <div class="form-group">
+                <label for="fechaFin">Fecha de finalización</label>
+                <input type="date" id="fechaFin" name="fechaFin" />
+              </div>
 
-                        <div class="form-group">
-                            <label for="telefono">Número de teléfono</label>
-                            <input type="tel" id="telefono" name="telefono">
-                        </div>
+              <div class="form-group">
+                <label for="personas">Cantidad de personas</label>
+                <input
+                  type="number"
+                  id="personas"
+                  name="personas"
+                  min="1"
+                  max="20"
+                />
+              </div>
 
-                    </fieldset>
+              <div class="form-group">
+                <label for="comentarios">Comentarios adicionales</label>
+                <textarea
+                  id="comentarios"
+                  name="comentarios"
+                  rows="5"
+                  placeholder="Escriba cualquier información o duda adicional..."
+                ></textarea>
+              </div>
+            </fieldset>
 
-                    <fieldset>
-
-                        <legend>Información del alquiler</legend>
-
-                        <div class="form-group">
-                            <label for="propiedad">Propiedad</label>
-                            <select id="propiedad" name="propiedad">
-                                <option value="">Seleccione una propiedad</option>
-                                <option value="almendros">Casa Familiar Los Almendros</option>
-                                <option value="bella-vista">Residencia Bella Vista</option>
-                                <option value="centro-guapiles">Casa Centro Guápiles</option>
-                                <option value="la-colonia">Residencia La Colonia</option>
-                                <option value="jardines-caribe">Casa Jardines del Caribe</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fechaInicio">Fecha de inicio del alquiler</label>
-                            <input type="date" id="fechaInicio" name="fechaInicio" >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fechaFin">Fecha de finalización</label>
-                            <input type="date" id="fechaFin" name="fechaFin" >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="personas">Cantidad de personas</label>
-                            <input type="number" id="personas" name="personas" min="1" max="20" >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="comentarios">Comentarios adicionales</label>
-                            <textarea id="comentarios" name="comentarios" rows="5" placeholder="Escriba cualquier información o duda adicional..."></textarea>
-                        </div>
-
-                    </fieldset>
-
-                    <button type="submit" class="btn" id="btn-submit">Enviar solicitud</button>
-
-                </form>
-
-            </div>
-
-        </section>
-
+            <button type="submit" class="btn" id="btn-submit">
+              Enviar solicitud
+            </button>
+          </form>
+        </div>
+      </section>
     </main>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
     <script src="../js/rental.js"></script>
-
-</body>
-
+  </body>
 </html>
