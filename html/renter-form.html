@@ -6,55 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solicitud de alquiler</title>
     <link rel="stylesheet" href="../css/rental-catalog.css">
-
-    <!-- Carga del SDK de EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-    <!-- Script de configuración e integración de EmailJS -->
-    <script type="text/javascript">
-        (function() {
-            // Inicialización con tu PUBLIC KEY
-            emailjs.init({
-                publicKey: "OXFQF2WFK0789kA-I",
-            });
-        })();
-
-        window.onload = function() {
-            const form = document.getElementById('form-vivienda');
-
-            if (form) {
-                form.addEventListener('submit', function(event) {
-                    event.preventDefault(); // Evita la recarga de página
-
-                    // Cambio de texto del botón
-                    const submitBtn = document.getElementById('btn-submit');
-                    const originalText = submitBtn.textContent;
-
-                    submitBtn.textContent = 'Enviando...';
-                    submitBtn.disabled = true;
-
-                    // Envío mediante EmailJS
-                    emailjs.sendForm(
-                        'service_rkot84d',
-                        'template_gqeki6p',
-                        this
-                    )
-                    .then(() => {
-                        alert('¡La vivienda se ha registrado y enviado correctamente por correo!');
-                        form.reset();
-                    })
-                    .catch((error) => {
-                        alert('Hubo un error al enviar el formulario. Inténtelo de nuevo.');
-                        console.error('FAILED...', error);
-                    })
-                    .finally(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    });
-                });
-            }
-        };
-    </script>
 </head>
 
 <body>
@@ -72,165 +23,71 @@
 
                 <form id="form-vivienda">
 
-                    <!-- DATOS DEL SOLICITANTE -->
-
                     <fieldset>
 
                         <legend>Datos del solicitante</legend>
 
                         <div class="form-group">
-
                             <label for="nombre">Nombre completo</label>
-                            <input
-                                type="text"
-                                id="nombre"
-                                name="nombre"
-                                placeholder="Ingrese su nombre completo"
-                            >
-
+                            <input type="text" id="nombre" name="nombre">
                         </div>
 
-
                         <div class="form-group">
-
                             <label for="cedula">Cédula</label>
-                            <input
-                                type="text"
-                                id="cedula"
-                                name="cedula"
-                                placeholder="Ej: 1-2345-6789"
-                            >
-
+                            <input type="text" id="cedula" name="cedula" >
                         </div>
 
-
                         <div class="form-group">
-
                             <label for="correo">Correo electrónico</label>
-                            <input
-                                type="email"
-                                id="correo"
-                                name="correo"
-                                placeholder="ejemplo@correo.com"
-                            >
-
+                            <input type="email" id="correo" name="correo" >
                         </div>
 
-
                         <div class="form-group">
-
                             <label for="telefono">Número de teléfono</label>
-                            <input
-                                type="tel"
-                                id="telefono"
-                                name="telefono"
-                                placeholder="8888-8888"
-                            >
-
+                            <input type="tel" id="telefono" name="telefono">
                         </div>
 
                     </fieldset>
-
-
-                    <!-- INFORMACIÓN DEL ALQUILER -->
 
                     <fieldset>
 
                         <legend>Información del alquiler</legend>
 
                         <div class="form-group">
-
                             <label for="propiedad">Propiedad</label>
-
                             <select id="propiedad" name="propiedad">
-
                                 <option value="">Seleccione una propiedad</option>
-
-                                <option value="almendros">
-                                    Casa Familiar Los Almendros
-                                </option>
-
-                                <option value="bella-vista">
-                                    Residencia Bella Vista
-                                </option>
-
-                                <option value="centro-guapiles">
-                                    Casa Centro Guápiles
-                                </option>
-
-                                <option value="la-colonia">
-                                    Residencia La Colonia
-                                </option>
-
-                                <option value="jardines-caribe">
-                                    Casa Jardines del Caribe
-                                </option>
-
+                                <option value="almendros">Casa Familiar Los Almendros</option>
+                                <option value="bella-vista">Residencia Bella Vista</option>
+                                <option value="centro-guapiles">Casa Centro Guápiles</option>
+                                <option value="la-colonia">Residencia La Colonia</option>
+                                <option value="jardines-caribe">Casa Jardines del Caribe</option>
                             </select>
-
                         </div>
 
-
                         <div class="form-group">
-
                             <label for="fechaInicio">Fecha de inicio del alquiler</label>
-
-                            <input
-                                type="date"
-                                id="fechaInicio"
-                                name="fechaInicio"
-                            >
-
+                            <input type="date" id="fechaInicio" name="fechaInicio" >
                         </div>
 
-
                         <div class="form-group">
-
                             <label for="fechaFin">Fecha de finalización</label>
-
-                            <input
-                                type="date"
-                                id="fechaFin"
-                                name="fechaFin"
-                            >
-
+                            <input type="date" id="fechaFin" name="fechaFin" >
                         </div>
 
-
                         <div class="form-group">
-
                             <label for="personas">Cantidad de personas</label>
-
-                            <input
-                                type="number"
-                                id="personas"
-                                name="personas"
-                                min="1"
-                                max="20"
-                            >
-
+                            <input type="number" id="personas" name="personas" min="1" max="20" >
                         </div>
 
-
                         <div class="form-group">
-
                             <label for="comentarios">Comentarios adicionales</label>
-
-                            <textarea
-                                id="comentarios"
-                                name="comentarios"
-                                rows="5"
-                                placeholder="Escriba cualquier información o duda adicional..."
-                            ></textarea>
-
+                            <textarea id="comentarios" name="comentarios" rows="5" placeholder="Escriba cualquier información o duda adicional..."></textarea>
                         </div>
 
                     </fieldset>
 
-
-                    <button type="submit" class="btn" id="btn-submit">
-                        Enviar solicitud
-                    </button>
+                    <button type="submit" class="btn" id="btn-submit">Enviar solicitud</button>
 
                 </form>
 
@@ -239,6 +96,9 @@
         </section>
 
     </main>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../js/rental.js"></script>
 
 </body>
 
