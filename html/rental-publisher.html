@@ -6,50 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publicar vivienda</title>
     <link rel="stylesheet" href="../css/rental-publisher.css">
-    
-    <!-- Carga del SDK de EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    
-    <!-- Script de configuración e integración de EmailJS -->
-    <script type="text/javascript">
-        (function() {
-            // Inicialización con tu PUBLIC KEY
-            emailjs.init({
-                publicKey: "OXFQF2WFK0789kA-I",
-            });
-        })();
-
-        window.onload = function() {
-            const form = document.getElementById('form-vivienda');
-            
-            if (form) {
-                form.addEventListener('submit', function(event) {
-                    event.preventDefault(); // Evita la recarga de página
-
-                    // Cambio de texto del botón para feedback del usuario
-                    const submitBtn = document.getElementById('btn-submit');
-                    const originalText = submitBtn.textContent;
-                    submitBtn.textContent = 'Enviando...';
-                    submitBtn.disabled = true;
-
-                    // Envío mediante EmailJS usando tu SERVICE ID y TEMPLATE ID
-                    emailjs.sendForm('service_rkot84d', 'template_gqeki6p', this)
-                        .then(() => {
-                            alert('¡La vivienda se ha registrado y enviado correctamente por correo!');
-                            form.reset();
-                        })
-                        .catch((error) => {
-                            alert('Hubo un error al enviar el formulario. Inténtelo de nuevo.');
-                            console.error('FAILED...', error);
-                        })
-                        .finally(() => {
-                            submitBtn.textContent = originalText;
-                            submitBtn.disabled = false;
-                        });
-                });
-            }
-        };
-    </script>
 </head>
 
 <body>
@@ -114,75 +70,41 @@
                 </p>
 
 
-                <!-- FORMULARIO VINCULADO A EMAILJS (id="form-vivienda") -->
                 <form id="form-vivienda">
 
-
-                    <!-- DATOS DEL PROPIETARIO -->
-
                     <fieldset>
-
                         <legend>Datos del propietario</legend>
 
                         <label for="nombre">Nombre:</label>
-                        <input 
-                            type="text" 
-                            id="nombre" 
-                            name="nombre"
-                            required
-                        >
+                        <input type="text" id="nombre" name="nombre" >
 
                         <br><br>
-
 
                         <label for="apellidos">Apellidos:</label>
-                        <input 
-                            type="text" 
-                            id="apellidos" 
-                            name="apellidos"
-                            required
-                        >
+                        <input type="text" id="apellidos" name="apellidos" >
 
                         <br><br>
-
 
                         <label for="telefono">Número de teléfono:</label>
-                        <input 
-                            type="tel" 
-                            id="telefono" 
-                            name="telefono"
-                            required
-                        >
+                        <input type="tel" id="telefono" name="telefono" >
 
                         <br><br>
 
-
                         <label for="correo">Correo electrónico:</label>
-                        <input 
-                            type="email" 
-                            id="correo" 
-                            name="correo"
-                            required
-                        >
+                        <input type="email" id="correo" name="correo" >
 
                     </fieldset>
 
-
                     <br>
-
-
-                    <!-- DATOS DE LA VIVIENDA -->
 
                     <fieldset>
 
                         <legend>Datos de la vivienda</legend>
-
-
                         <label for="tipo-vivienda">
                             Tipo de vivienda:
                         </label>
 
-                        <select id="tipo-vivienda" name="tipo_vivienda" required>
+                        <select id="tipo-vivienda" name="tipo_vivienda" >
 
                             <option value="">
                                 Seleccione una opción
@@ -205,13 +127,8 @@
                             Nombre de la vivienda:
                         </label>
 
-                        <input 
-                            type="text" 
-                            id="nombre-vivienda" 
-                            name="nombre_vivienda"
-                            placeholder="Ej. Casa Los Ángeles"
-                            required
-                        >
+                        <input type="text" id="nombre-vivienda" name="nombre_vivienda"
+                            placeholder="Ej. Casa Los Ángeles" >
 
                         <br><br>
 
@@ -222,13 +139,8 @@
 
                         <br>
 
-                        <textarea 
-                            id="descripcion" 
-                            name="descripcion"
-                            rows="5"
-                            placeholder="Describa brevemente la vivienda..."
-                            required
-                        ></textarea>
+                        <textarea id="descripcion" name="descripcion" rows="5"
+                            placeholder="Describa brevemente la vivienda..." ></textarea>
 
                         <br><br>
 
@@ -237,13 +149,7 @@
                             Cantidad de habitaciones:
                         </label>
 
-                        <input 
-                            type="number" 
-                            id="habitaciones" 
-                            name="habitaciones"
-                            min="1"
-                            required
-                        >
+                        <input type="number" id="habitaciones" name="habitaciones" min="1" >
 
                         <br><br>
 
@@ -252,13 +158,7 @@
                             Cantidad de baños:
                         </label>
 
-                        <input 
-                            type="number" 
-                            id="banos" 
-                            name="banos"
-                            min="1"
-                            required
-                        >
+                        <input type="number" id="banos" name="banos" min="1" >
 
                         <br><br>
 
@@ -267,7 +167,7 @@
                             ¿Cuenta con cochera?
                         </label>
 
-                        <select id="cochera" name="cochera" required>
+                        <select id="cochera" name="cochera" >
 
                             <option value="">
                                 Seleccione una opción
@@ -290,7 +190,7 @@
                             ¿Cuenta con aire acondicionado?
                         </label>
 
-                        <select id="aire-acondicionado" name="aire_acondicionado" required>
+                        <select id="aire-acondicionado" name="aire_acondicionado" >
 
                             <option value="">
                                 Seleccione una opción
@@ -313,14 +213,7 @@
                             Precio mensual:
                         </label>
 
-                        <input 
-                            type="number" 
-                            id="precio" 
-                            name="precio"
-                            min="0"
-                            placeholder="Ej. 250000"
-                            required
-                        >
+                        <input type="number" id="precio" name="precio" min="0" placeholder="Ej. 250000" >
 
                         <br><br>
 
@@ -329,12 +222,7 @@
                             Fecha de publicación:
                         </label>
 
-                        <input 
-                            type="date" 
-                            id="fecha" 
-                            name="fecha"
-                            required
-                        >
+                        <input type="date" id="fecha" name="fecha">
 
                     </fieldset>
 
@@ -374,6 +262,8 @@
 
     </footer>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../js/publisher-form.js"></script>
 </body>
 
 </html>
