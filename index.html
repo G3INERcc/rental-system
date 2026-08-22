@@ -10,13 +10,13 @@
 
 <body>
     <header>
-        <section class="menu-container">
+        <section id="menu-inicio" class="menu-container">
             <nav class="menu">
-                <h1 class="logo">Galei </h1>
+                <h1 class="logo">GaleiRent </h1>
 
                 <ul class="menu-links">
                     <li class="menu-item">
-                        <a href="#" class="menu-link">Inicio</a>
+                        <a href="#menu-inicio" class="menu-link">Inicio</a>
                     </li>
 
                     <li class="menu-item">
@@ -24,14 +24,18 @@
                     </li>
 
                     <li class="menu-item">
+                        <a href="html/faq.html" class="menu-link">Preguntas frecuentes</a>
+                    </li>
+
+                    <li class="menu-item">
                         <a href="#" class="menu-link">Servicios</a>
                         <ul class="menu-nesting">
                             <li class="menu-inside">
-                                <a href="html/rental-publisher.html" class="menu-link menu-link--inside">Servicio de alquiler</a>
+                                <a href="html/rental-publisher.html" id = "inside_text" class="menu-link menu-link--inside">Catalogo de alquiler</a>
                             </li>
 
                             <li class="menu-inside">
-                                <a href="html/rental-catalog.html" class="menu-link menu-link--inside">Renta de residencias</a>
+                                <a href="html/rental-catalog.html" id = "inside_text" class="menu-link menu-link--inside">Renta de residencias</a>
                             </li>
 
                         </ul>
@@ -50,11 +54,11 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Bienvenido a G3</h1>
+                    <h1 class="hero-title">Bienvenido a GaleiRent</h1>
                     <p class="hero-text">
                         Descubre nuestra amplia gama de servicios de alquiler y renta de residencias.
                     </p>
-                    <a href="#" class="btn">Explorar servicios</a>
+                    <a href="#inicio" class="btn">Explorar servicios</a>
                 </div>
             </div>
 
@@ -76,7 +80,7 @@
                                 Descubre nuestra selección de casas
                                 disponibles para alquilar.
                             </p>
-                            <button class="btn">Ver más</button>
+                            <a href="html/rental-catalog.html" class="btn">Ver más</a>
 
                         </div>
                     </article>
@@ -91,11 +95,10 @@
                             <h3>Renta de residencias</h3>
 
                             <p>
-                                Descubre nuestra selección de residencias
-                                disponibles para rentar.
+                                Llena nuestro formulario para publicar tu residencia y ponerla en renta.
                             </p>
 
-                            <button class="btn">Ver más</button>
+                            <a href="html/rental-publisher.html" class="btn">Ver más</a>
                         </div>
                     </article>
 
@@ -106,7 +109,7 @@
 
     <footer>
         <div class="footer-container">
-            <p>&copy; 2026 G3. Todos los derechos reservados.</p>
+            <p>&copy; 2026 GaleiRent. Todos los derechos reservados.</p>
         </div>
     </footer>
 </body>

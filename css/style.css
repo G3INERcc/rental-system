@@ -1,3 +1,7 @@
+/* ==============================
+   ESTILO GENERAL
+================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,183 +13,330 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffffff;
-    color: #010101;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #F5E6D3;
+    color: #4B2E2E;
     line-height: 1.6;
 }
 
+
+/* ==============================
+   HEADER
+================================ */
+
 header {
-     background:
-        linear-gradient(
-            120deg,
-            rgba(221, 4, 210, 0.9),
-            rgba(168, 85, 247, .65),
-            rgba(244, 114, 182, .35)
-        );
+    background: linear-gradient(
+        90deg,
+        #4B2E2E,
+        #3A1F1F
+    );
+
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow:0 2px 12px rgba(0, 0, 0, 0.2);
-    
+
+    box-shadow:
+        0 4px 12px rgba(75, 46, 46, 0.3);
+
+    height: 70px;
+
+    border-bottom: 4px solid #FF7A00;
 }
 
-/*
 
--------------Menu bar----------
+/* ==============================
+   MENU
+================================ */
 
-*/
 .menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     width: 100%;
+    height: 100%;
 }
-.menu-container{
+
+.menu-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     width: 90%;
     max-width: 1200px;
     height: 100%;
+
     margin: 0 auto;
 }
-.menu-links{
+
+
+/* ==============================
+   LOGO
+================================ */
+
+.logo {
+    color: #FF7A00;
+    font-size: 28px;
+}
+
+
+/* ==============================
+   MENU LINKS
+================================ */
+
+.menu-links {
     height: 100%;
+
+    display: flex;
+
     transition: transform .5s;
-    display: flex;
-}
-.menu-link{
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 0 30px;
-    height: 100%;
-}
-.menu-link:hover{
-    background-color: rgba(165, 24, 24, 0);
-}
-.menu-link--inside{
-    padding: 10px 30px 10px 10px;
-
-}
-.menu-link--inside:hover{
-         background-color:rgba(214, 25, 164, 0.208);
-    color: black;
-    border-color: #000000;
 }
 
-.menu-item{
+.menu-item {
     list-style: none;
     position: relative;
+
     height: 100%;
-    --clip: polygon(0 0,100% 0,100% 0,0 0);
-}
-.menu-item:hover{
-    --clip: polygon(0 0,100% 0,100% 100%,0 100%);
 
-}
-
-.menu-nesting{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    transform: translateY(100%);
-    width: 100%;
-    list-style: none;
-    background: #fafcfc;
-    clip-path: var(--clip);
-    transition: .3s;
-    z-index: 200;
-    border-radius: 0 0 10px 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,.15);
+    --clip: polygon(
+        0 0,
+        100% 0,
+        100% 0,
+        0 0
+    );
 }
 
+.menu-item:hover {
+    --clip: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+}
 
+.menu-link {
+    color: #F5E6D3;
 
-/* Section imagen */
-.hero {
-    min-height: 430px;
+    text-decoration: none;
+
     display: flex;
     align-items: center;
+
+    padding: 0 30px;
+
+    height: 100%;
+
+    transition:
+        background-color .3s,
+        color .3s;
+}
+
+.menu-link:hover {
+    background-color: rgba(255, 122, 0, 0.15);
+    color: #FF7A00;
+}
+
+.menu-link--inside {
+    padding: 10px 30px 10px 10px;
+}
+
+.menu-link--inside:hover {
+    background-color: #F5E6D3;
+    color: #372020;
+}
+
+
+/* ==============================
+   MENU DESPLEGABLE
+================================ */
+
+.menu-nesting {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    transform: translateY(100%);
+
+    width: 100%;
+
+    list-style: none;
+
+    background-color: #FFFFFF;
+
+    clip-path: var(--clip);
+
+    transition: .3s;
+
+    z-index: 200;
+
+    border-radius: 0 0 10px 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 6px 16px rgba(75, 46, 46, 0.3);
+}
+#inside_text{
+        color: #372020;
+}
+.menu-inside {
+    color: #372020;
+    list-style: none;
+}
+
+
+/* ==============================
+   HERO
+================================ */
+
+.hero {
+    min-height: 430px;
+
+    display: flex;
+    align-items: center;
+
     padding: 60px 10%;
+
     background:
         linear-gradient(
             120deg,
-            rgba(91, 33, 182, .90),
-            rgba(168, 85, 247, .65),
-            rgba(244, 114, 182, .35)
+            rgba(75, 46, 46, 0.90),
+            rgba(58, 31, 31, 0.75),
+            rgba(255, 122, 0, 0.35)
         ),
         url("../img/house.jpg");
+
     background-size: cover;
     background-position: center;
 }
 
+.hero-content {
+    max-width: 600px;
+}
 
-/*
+.hero-title {
+    color: #FFFFFF;
 
-SECTION PROJECTS   
+    font-size: 45px;
 
-*/
+    margin-bottom: 15px;
+}
+
+.hero-text {
+    color: #F5E6D3;
+
+    font-size: 18px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==============================
+   BOTONES
+================================ */
+
+.btn {
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #FF7A00;
+
+    color: #FFFFFF;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color .3s ease,
+        transform .2s ease;
+}
+
+.btn:hover {
+    background-color: #06C167;
+
+    transform: translateY(-3px);
+}
+
+
+/* ==============================
+   SECCIONES
+================================ */
+
 .section {
     padding: 90px 0;
 }
 
-.hero-service{ 
-    background-color: #f1f5f9;
+.hero-service {
+    background-color: #F5E6D3;
 }
 
-.container{
+.container {
     width: 90%;
     max-width: 1200px;
+
     margin: 0 auto;
-}   
-/* 
+}
 
+
+/* ==============================
    PROYECTOS
-
-   */
+================================ */
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
+
     gap: 30px;
 }
 
-/* 
-   -----------TARJETAS----------
 
- */
+/* ==============================
+   TARJETAS
+================================ */
 
 .project {
-    width: 70%; /*-----TAMAÑO DE LAS TARJETAS-----*/
-    background-color: white;
+    width: 100%;
+
+    background-color: #FFFFFF;
+
     border-radius: 12px;
+
     overflow: hidden;
 
     box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.08);
+        0 4px 12px rgba(75, 46, 46, 0.2);
 
     transition:
-        transform 0.3s,
-        box-shadow 0.3s;
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .project:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.14);
+        0 6px 16px rgba(75, 46, 46, 0.3);
 }
 
+
 /* ==============================
-   IMAGEN
+   IMAGEN DE LAS TARJETAS
 ================================ */
 
-.project-img {
-    height: 80px;
+.projects-img {
+    height: 220px;
+
     overflow: hidden;
 }
 
@@ -198,40 +349,125 @@ SECTION PROJECTS
     transition: transform 0.4s;
 }
 
-.project:hover .project-img img {
+.project:hover .projects-img img {
     transform: scale(1.06);
 }
 
+
 /* ==============================
-   CONTENIDO
+   CONTENIDO DE LAS TARJETAS
 ================================ */
 
 .project-content {
-    padding: 25px;
+    padding: 20px;
 }
 
-.project h3 {
-    color: #0f172a;
+.project-content h3 {
+    color: #06C167;
+
     font-size: 21px;
-    margin-bottom: 12px;
+
+    margin-bottom: 10px;
 }
 
-.project p {
-    color: #64748b;
-    margin-bottom: 20px;
+.project-content p {
+    color: #4B2E2E;
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
 }
 
 
+/* ==============================
+   FOOTER
+================================ */
 
-
-/*
-
-FOOTER
-
-*/
 footer {
-    color: #ffffff;
-    background-color: #020203;
+    color: #F5E6D3;
+
+    background-color: #3A1F1F;
+
     padding: 20px 0;
+
     text-align: center;
+
+    border-top: 4px solid #FF7A00;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* ==============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+    header {
+        height: auto;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-container {
+        padding: 15px 0;
+    }
+
+    .menu-links {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .menu-item {
+        height: auto;
+    }
+
+    .menu-link {
+        padding: 15px;
+
+        justify-content: center;
+    }
+
+    .menu-nesting {
+        position: static;
+
+        transform: none;
+
+        width: 100%;
+
+        clip-path: none;
+
+        display: none;
+    }
+
+    .menu-item:hover .menu-nesting {
+        display: block;
+    }
+
+    .hero {
+        min-height: 400px;
+
+        padding: 50px 5%;
+    }
+
+    .hero-title {
+        font-size: 35px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project {
+        width: 100%;
+    }
 }
