@@ -1,0 +1,194 @@
+/* ---------- Estilo general ---------- */
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #F5E6D3; /* Beige suave */
+    color: #4B2E2E; /* Café profundo */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* ---------- Header ---------- */
+header {
+    background: linear-gradient(90deg, #4B2E2E, #3A1F1F);
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(75, 46, 46, 0.4);
+    border-bottom: 4px solid #FF7A00;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #FF7A00;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.menu-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-link {
+    color: #F5E6D3;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.menu-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #06C167;
+    transition: width 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #06C167;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+/* ---------- Hero ---------- */
+.about-hero {
+    background: url("../img/guapiles.jpg") center/cover no-repeat;
+    padding: 80px 20px;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.about-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(75, 46, 46, 0.6);
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.about-hero h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #FF7A00;
+}
+
+.about-hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* ---------- Secciones ---------- */
+.about-section {
+    padding: 60px 20px;
+    background-color: #FFFFFF;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(75, 46, 46, 0.1);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-content h2 {
+    color: #4B2E2E;
+    border-left: 6px solid #FF7A00;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #4B2E2E;
+    font-size: 16px;
+}
+
+/* ---------- Cards ---------- */
+.about-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.about-card {
+    flex: 1;
+    min-width: 250px;
+    background-color: #FDFBF9;
+    border: 1px solid #A49E9E;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(75, 46, 46, 0.2);
+}
+
+.about-card h3 {
+    color: #06C167;
+    margin-bottom: 10px;
+}
+
+/* ---------- Ubicación ---------- */
+.about-location {
+    background-color: #FF7A00;
+    color: #FFFFFF;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about-location h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.about-location p {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: #4B2E2E;
+    color: #F5E6D3;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+footer h2 {
+    color: #FF7A00;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer .copyright {
+    font-size: 12px;
+    color: #A49E9E;
+    margin-top: 15px;
+}
