@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             emailjs.sendForm(
                 'service_rkot84d',
-                'template_gqeki6p',
+                'template_46fzokz',
                 this
             )
             .then(() => {
